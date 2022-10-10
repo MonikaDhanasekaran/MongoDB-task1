@@ -233,3 +233,4 @@ db.products.aggregate([
     .forEach((doc) => {
         db.products.remove({product_price: doc._id});
     });
+
