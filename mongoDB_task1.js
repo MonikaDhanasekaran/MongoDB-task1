@@ -190,7 +190,7 @@ db.products.find({product_price: {$gte: 400,$lte: 800} });
 
 db.products.find ({ $or: [ {product_price: {$lte: 400}},{product_price: {$gte: 600}} ] } );
 
-// 4.List the four product which are greater than 500 in price (Using Greater Than operator)
+// 4.List the four product which are greater than 500 in price (Using Greaterthan operator)
 
 db.products.find({product_price: {$gt: 500}}).limit(4);
 
@@ -210,11 +210,11 @@ db.products.find({},{_id:0, product_price:0, product_color:0, id:0});
 
 db.products.find({product_material: "Soft"});
 
-// 9.Find products which contain product color indigo and product price 492.00 (Using OR condition)
+// 9.Find products which contain product color indigo and product price 492.00 (Using  condition)
 
 db.products.find({ $or: [{product_color: "indigo"},{product_price: 492.00}] });
 
-// 10.Delete the products which product price value are same (Using remove)
+// 10.Delete the products which product price value are same (Using remove with aggregate function)
 
 db.products.aggregate([
     {
